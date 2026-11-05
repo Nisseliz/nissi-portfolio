@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<title>Nissi Elizabeth Portfolio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: a camera viewfinder hero (REC frame), then a single readable column of sections with a two-column work grid */
+:root{
+  --bg:#F3F5F9; --surface:#FFFFFF; --ink:#141826; --muted:#5B6275; --line:#DCE1EB;
+  --rec:#E0284A; --sun:#F2B705; --soft:#FCE8EC;
+  --display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body:"DM Sans", system-ui, -apple-system, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0F121B; --surface:#171B27; --ink:#EEF0F6; --muted:#9AA1B4; --line:#2A3042;
+  --rec:#FF4D6A; --sun:#F7C531; --soft:#2A1820; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0F121B; --surface:#171B27; --ink:#EEF0F6; --muted:#9AA1B4; --line:#2A3042;
+  --rec:#FF4D6A; --sun:#F7C531; --soft:#2A1820; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6}
+.wrap{max-width:920px;margin:0 auto;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));padding-block:40px 64px;display:flex;flex-direction:column;gap:56px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.1}
+p{margin:0}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:2px solid var(--rec);outline-offset:3px;border-radius:4px}
+.vh{position:absolute;left:-9999px}
+
+/* Viewfinder hero */
+.vf{position:relative;padding:44px 28px 36px}
+.vf .c{position:absolute;width:26px;height:26px;border-color:var(--ink);border-style:solid;border-width:0}
+.c.tl{top:0;left:0;border-top-width:3px;border-left-width:3px}
+.c.tr{top:0;right:0;border-top-width:3px;border-right-width:3px}
+.c.bl{bottom:0;left:0;border-bottom-width:3px;border-left-width:3px}
+.c.br{bottom:0;right:0;border-bottom-width:3px;border-right-width:3px}
+.hud{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--muted);margin-bottom:28px}
+.rec{display:inline-flex;align-items:center;gap:8px;color:var(--rec);font-weight:500}
+.rec i{width:10px;height:10px;border-radius:50%;background:var(--rec);animation:blink 1.4s steps(2,start) infinite}
+@keyframes blink{to{visibility:hidden}}
+@media (prefers-reduced-motion:reduce){.rec i{animation:none}}
+.hero h1{font-size:clamp(44px,9vw,84px);font-weight:800;letter-spacing:-.02em}
+.hero h1 span{color:var(--rec)}
+.role{font-family:var(--display);font-size:clamp(19px,2.6vw,24px);font-weight:500;margin-top:14px;max-width:36ch}
+.hero .lede{color:var(--muted);margin-top:16px;max-width:62ch}
+.links{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border:1.5px solid var(--ink);border-radius:999px;text-decoration:none;font-weight:600;font-size:14px;background:none;color:inherit;font-family:inherit;cursor:pointer}
+.btn.primary{background:var(--ink);color:var(--bg)}
+.btn.todo{border-style:dashed;color:var(--muted);border-color:var(--muted);cursor:default}
+
+/* Sections */
+.sec{display:flex;flex-direction:column;gap:20px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--rec)}
+.sec h2{font-size:clamp(28px,4.4vw,38px);font-weight:700}
+.about p{max-width:64ch;font-size:17px}
+
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px;display:flex;flex-direction:column;gap:6px}
+.stat b{font-family:var(--display);font-size:26px;font-weight:800;font-variant-numeric:tabular-nums;line-height:1.1}
+.stat span{color:var(--muted);font-size:14px;line-height:1.45}
+
+.exp{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.job{display:grid;grid-template-columns:170px 1fr;gap:8px 24px;padding:22px 0;border-bottom:1px solid var(--line)}
+.job .when{font-family:var(--mono);font-size:13px;color:var(--muted);padding-top:4px}
+.job h3{font-size:21px;font-weight:700}
+.job .org{color:var(--muted);font-weight:500;margin-top:2px}
+.job ul{margin:10px 0 0;padding-left:18px;display:flex;flex-direction:column;gap:4px}
+.job > div{min-width:0}
+
+.work{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.tag{align-self:flex-start;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding:4px 8px;border-radius:4px;background:var(--soft);color:var(--rec)}
+.card h3{font-size:19px;font-weight:700}
+.card p{color:var(--muted);font-size:15px}
+.card .go{margin-top:auto;font-weight:600;font-size:14px;color:var(--ink)}
+.card .go.todo{color:var(--muted);font-style:italic;font-weight:500}
+.card.hit{border-color:var(--sun);box-shadow:0 0 0 1px var(--sun) inset}
+.card.hit .tag{background:var(--sun);color:#141826}
+
+.lead{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.lead .card h3{font-size:18px}
+
+.skillgroups{display:flex;flex-direction:column;gap:14px}
+.sg{display:grid;grid-template-columns:170px 1fr;gap:8px 24px;align-items:start}
+.sg h3{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:500;padding-top:9px}
+.skills{display:flex;flex-wrap:wrap;gap:8px;min-width:0}
+.skills span{padding:7px 14px;border:1px solid var(--line);background:var(--surface);border-radius:999px;font-size:14px;font-weight:500}
+
+.contact{background:var(--ink);color:var(--bg);border-radius:14px;padding:32px 28px;display:flex;flex-direction:column;gap:14px}
+.contact h2{color:var(--bg);font-size:clamp(28px,4.4vw,38px)}
+.contact p{opacity:.8;max-width:56ch}
+.lines{display:flex;flex-direction:column;gap:10px;margin-top:6px}
+.line{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px}
+.line .k{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;opacity:.65;width:90px}
+.line .v{font-size:18px;font-weight:600;user-select:all;overflow-wrap:anywhere;font-variant-numeric:tabular-nums}
+.copy{font:500 12px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--bg);background:none;border:1px solid var(--bg);border-radius:999px;padding:4px 10px;cursor:pointer;opacity:.8}
+.contact .btn{border-color:var(--bg);color:var(--bg)}
+.contact .btn.primary{background:var(--rec);border-color:var(--rec);color:#fff}
+footer{font-family:var(--mono);font-size:12px;color:var(--muted);text-align:center}
+
+@media (max-width:760px){.stats{grid-template-columns:1fr}}
+@media (max-width:640px){
+  .wrap{padding-block:24px 48px;gap:44px}
+  .vf{padding:36px 18px 28px}
+  .job,.sg{grid-template-columns:1fr}
+  .sg h3{padding-top:0}
+  .work,.lead{grid-template-columns:1fr}
+  .contact{padding:26px 20px}
+  .line .k{width:auto}
+}
+</style>
+
+<main class="wrap">
+
+  <header class="vf hero" aria-label="Introduction">
+    <i class="c tl"></i><i class="c tr"></i><i class="c bl"></i><i class="c br"></i>
+    <div class="hud" aria-hidden="true"><span class="rec"><i></i>REC</span><span>4K · 30FPS</span><span>HYDERABAD</span></div>
+    <h1>Nissi Elizabeth<span>.</span></h1>
+    <p class="role">Presenter, host and content creator who can talk to anyone, and make anything worth watching.</p>
+    <p class="lede">Final-year B.Tech CSE student at Anurag University. I create content at Codebasics, have presented for a fintech app, hosted an AI summit at Microsoft's Hyderabad office, and run my own college-life YouTube channel that I shoot and edit myself.</p>
+    <div class="links">
+      <a class="btn primary" href="https://www.instagram.com/niss_elizoo/" target="_blank" rel="noopener">Instagram · @niss_elizoo</a>
+      <a class="btn" href="https://www.youtube.com/@Nissi_Elizabeth" target="_blank" rel="noopener">YouTube · @Nissi_Elizabeth</a>
+      <a class="btn" href="https://x.com/NissiEliza" target="_blank" rel="noopener">X · @NissiEliza</a>
+    </div>
+  </header>
+
+  <section class="sec about" aria-labelledby="about-h">
+    <div class="eyebrow">About</div>
+    <h2 id="about-h">Comfortable in any room I walk into.</h2>
+    <p>Codebasics noticed how I spoke at one of their events and offered me a content role. I hadn't applied. That's what I bring to every room: I'm easy to talk to, I explain things clearly, and I stay calm when there are many people to coordinate and little time. From hosting live matches to leading a college entrepreneurship club, I've learned to work with stakeholders, keep things moving and make people feel welcome.</p>
+  </section>
+
+  <section class="sec" aria-labelledby="num-h">
+    <div class="eyebrow">Highlights</div>
+    <h2 id="num-h" class="vh">Highlights</h2>
+    <div class="stats">
+      <div class="stat"><b>AI Summit</b><span>hosted at Microsoft Office, Hyderabad, for students from many colleges</span></div>
+      <div class="stat"><b>Vice President</b><span>InCube entrepreneurship club, organising hackathons and events</span></div>
+      <div class="stat"><b>CTF Winner</b><span>ZERODAY CTF Hackathon 2025, cybersecurity</span></div>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="exp-h">
+    <div class="eyebrow">Experience</div>
+    <h2 id="exp-h">Where I've worked</h2>
+    <div class="exp">
+      <article class="job">
+        <div class="when">Present</div>
+        <div>
+          <h3>Content Creator (Freelance)</h3>
+          <p class="org">Codebasics, Hyderabad</p>
+          <ul>
+            <li>Approached by the team after they saw me speak at a Codebasics event.</li>
+            <li>Create Instagram reels for Career Torch, Codebasics' AI career companion, using trend-based content that grows reach without feeling like an ad.</li>
+            <li>Youngest member of the team; work in-office three days a week.</li>
+          </ul>
+        </div>
+      </article>
+      <article class="job">
+        <div class="when">Freelance</div>
+        <div>
+          <h3>Content Presenter</h3>
+          <p class="org">Thoshika Financial Services (TFS)</p>
+          <ul>
+            <li>Wrote and presented loan-awareness content, featured on screen inside TFS's mobile app.</li>
+            <li>Delivered marketing material directly to the company's end users.</li>
+          </ul>
+        </div>
+      </article>
+      <article class="job">
+        <div class="when">Freelance</div>
+        <div>
+          <h3>Event Host</h3>
+          <p class="org">Inter-Branch Cricket Tournament, Hyderabad</p>
+          <ul>
+            <li>Hosted live matches between bank branches across Hyderabad.</li>
+            <li>Coordinated with multiple stakeholders under time pressure.</li>
+          </ul>
+        </div>
+      </article>
+      <article class="job">
+        <div class="when">2023 – Present</div>
+        <div>
+          <h3>Creator &amp; Editor</h3>
+          <p class="org">YouTube &amp; Instagram</p>
+          <ul>
+            <li>Documenting college life: hackathons, tech workshops, trips and campus events.</li>
+            <li>Plan, shoot and edit every video myself in CapCut.</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="lead-h">
+    <div class="eyebrow">Leadership &amp; events</div>
+    <h2 id="lead-h">Rooms I've run</h2>
+    <div class="lead">
+      <article class="card">
+        <span class="tag">Host</span>
+        <h3>AI Summit at Microsoft Office, Hyderabad</h3>
+        <p>Organised and hosted an AI-focused summit that brought together students from colleges across Hyderabad.</p>
+      </article>
+      <article class="card">
+        <span class="tag">Vice President</span>
+        <h3>InCube Club (Entrepreneurship)</h3>
+        <p>Organised hackathons and events, and mentored junior participants.</p>
+      </article>
+      <article class="card">
+        <span class="tag">Organising Lead</span>
+        <h3>Career Odyssey Club (Placements)</h3>
+        <p>Coordinated placement drives and recruitment events for senior students.</p>
+      </article>
+      <article class="card">
+        <span class="tag">Winner</span>
+        <h3>ZERODAY CTF Hackathon 2025</h3>
+        <p>Won a cybersecurity Capture The Flag competition.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="work-h">
+    <div class="eyebrow">Selected work</div>
+    <h2 id="work-h">Things I've made</h2>
+    <div class="work">
+      <article class="card">
+        <span class="tag">Brand content</span>
+        <h3>Career Torch reels</h3>
+        <p>Trend-led reels and memes for an AI career product, built to be shared rather than skipped.</p>
+        <span class="go">Made at Codebasics</span>
+      </article>
+      <article class="card">
+        <span class="tag">YouTube vlog</span>
+        <h3>Hackathon &amp; event vlogs</h3>
+        <p>Behind-the-scenes coverage of hackathons and tech workshops, shot and edited solo.</p>
+        <a class="go" href="https://www.youtube.com/@Nissi_Elizabeth" target="_blank" rel="noopener">Watch on my channel →</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="skill-h">
+    <div class="eyebrow">Skills</div>
+    <h2 id="skill-h">What I'm good at</h2>
+    <div class="skillgroups">
+      <div class="sg"><h3>People</h3><div class="skills"><span>Public speaking</span><span>Event hosting</span><span>On-camera presenting</span><span>Stakeholder coordination</span><span>Pitching &amp; outreach</span></div></div>
+      <div class="sg"><h3>Content</h3><div class="skills"><span>Scriptwriting</span><span>Hooks &amp; storytelling</span><span>Short-form video</span><span>Vlog shooting</span><span>CapCut editing</span><span>Trend research</span></div></div>
+      <div class="sg"><h3>Tech</h3><div class="skills"><span>Python</span><span>Java</span><span>HTML &amp; CSS</span><span>MySQL</span><span>Git &amp; GitHub</span></div></div>
+    </div>
+  </section>
+
+  <section class="contact" aria-labelledby="contact-h">
+    <h2 id="contact-h">Let's work together.</h2>
+    <p>Open to sponsorship, partnership, hosting and content roles. I reply fast.</p>
+    <div class="lines">
+      <div class="line"><span class="k">Email</span><span class="v" id="em">nissielizo.creates@gmail.com</span><button class="copy" type="button" data-t="em">Copy</button></div>
+      <div class="line"><span class="k">Phone</span><span class="v" id="ph">+91 87904 86372</span><button class="copy" type="button" data-t="ph">Copy</button></div>
+    </div>
+    <div class="links">
+      <a class="btn primary" href="https://www.instagram.com/niss_elizoo/" target="_blank" rel="noopener">DM on Instagram</a>
+      <a class="btn" href="https://www.youtube.com/@Nissi_Elizabeth" target="_blank" rel="noopener">Watch on YouTube</a>
+      <a class="btn" href="https://x.com/NissiEliza" target="_blank" rel="noopener">Follow on X</a>
+    </div>
+  </section>
+
+  <footer>Duddula Nissi Elizabeth · Hyderabad, Telangana</footer>
+</main>
+
+<script>
+document.querySelectorAll('.copy').forEach(function(b){
+  b.addEventListener('click',function(){
+    var el=document.getElementById(b.dataset.t), txt=el.textContent;
+    var done=function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy'},1500)};
+    var sel=function(){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected'};
+    try{navigator.clipboard.writeText(txt).then(done,sel)}catch(e){sel()}
+  });
+});
+</script>
+
+</body>
+</html>
